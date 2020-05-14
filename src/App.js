@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './stylesheets/App.css';
 import getGifs from './services/api';
+import GifItem from './components/GifItem';
 
 function App() {
   const [gifs, setGifs] = useState([]);
@@ -12,16 +13,13 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
-        {
-        gifs.map((singleGif) => {
-          return (
-            <div>
-              <h4> {singleGif.title}</h4>
-              <small>{singleGif.id}</small>
-              <img src={singleGif.url} alt={singleGif.title} />
-            </div>
-          );
-        })}
+        {gifs.map((singleGif) => (
+          <GifItem
+            title={singleGif.title}
+            url={singleGif.url}
+            id={singleGif.id}
+          />
+        ))}
 
         <button onClick={() => setGifs()}>Cambiar Gif</button>
       </section>
