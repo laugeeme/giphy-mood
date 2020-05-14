@@ -1,8 +1,19 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import getGifs from '../services/api';
 import GifItem from './GifItem';
 
 function GifList(props) {
-  const { gifs } = props;
+  const { keyword } = props;
+
+  const [gifs, setGifs] = useState([]);
+
+  useEffect(function () {
+    getGifs({ keyword })
+    .then((gifs) => setGifs(gifs));
+  }, [keyword]);
+
+
+
 
   return (
     <Fragment>

@@ -1,0 +1,18 @@
+.gif-container{
+    border: 1px solid #eee;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 15px;
+    padding: 30px;
+
+}
+
+.gif-container h4{
+    margin: 0;
+}
+
+.gif-container img{
+    object-fit: contain;
+}
