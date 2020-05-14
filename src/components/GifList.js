@@ -3,14 +3,23 @@ import getGifs from '../services/api';
 import GifItem from './GifItem';
 
 function GifList(props) {
-  const { keyword } = props;
+  const { params } = props;
+  const { keyword } = params; 
+  const [loading, setLoading] = useState(false)
+
 
   const [gifs, setGifs] = useState([]);
 
   useEffect(function () {
+    setLoading(true)
     getGifs({ keyword })
-    .then((gifs) => setGifs(gifs));
+    .then((gifs) => {
+        setGifs(gifs)
+        setLoading(false)})
   }, [keyword]);
+
+
+  if (loading) return <h2>Loading...</h2> 
 
 
 

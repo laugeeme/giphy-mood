@@ -5,10 +5,10 @@ function GifItem(props) {
   const { title, id, url } = props;
 
   return (
-    <div className='gif-container'>
+    <a href={`#${id}`} className='gif-container'>
       <h4> {title}</h4>
       <img src={url} alt={title} />
-    </div>
+    </a>
   );
 }
 
