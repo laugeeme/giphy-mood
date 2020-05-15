@@ -17,6 +17,11 @@
 
 }
 
+h1{
+  cursor: pointer;
+}
+
+
 button{
   width: 200px;
   height: 80px;
