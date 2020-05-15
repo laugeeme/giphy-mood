@@ -4,11 +4,11 @@ import GifList from './components/GifList';
 import { Route, Link } from 'wouter';
 
 function App() {
-  /* const [keyword, setKeyword] = useState('plant'); */
+
   return (
     <div className="App">
       <section className="App-content">
-        <Link to="/">
+        <Link exact to="/">
           <h1>What's your mood today?</h1>
         </Link>
 
@@ -22,7 +22,7 @@ function App() {
           <Link to="/gif/angry">Angry</Link>
         </div>
 
-        {/* <button onClick={() => setKeyword('nature')}>Botón</button> */}
+
         <Route path="/gif/:keyword" component={GifList} />
       </section>
     </div>
