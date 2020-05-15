@@ -1,7 +1,7 @@
 const apiKey = 'ut91PUS7NJ5SHYTENuqOraVDePUIeePe';
 
 function getGifs({ keyword = 'think' } = {}) {
-  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=5&offset=0&rating=G&lang=en`;
+  const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=10&offset=0&rating=G&lang=en`;
 
   return fetch(apiURL)
     .then((response) => response.json())
